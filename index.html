@@ -3,146 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star Airport Cars - Airport Transfers & Trips UK & Europe</title>
+    <title>Star Airport Cars - Premium Airport Transfers & Europe Trips</title>
+    
+    <!-- Google Fonts: Elegant pairing (Playfair Display for headings + Inter for body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #0f172a; /* Dark navy base for luxury */
+            color: #e2e8f0;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
         .hero-bg {
-            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)),
+                        url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover no-repeat fixed;
+        }
+        .premium-btn {
+            background: linear-gradient(135deg, #d4af37, #b8860b);
+            color: #0f172a;
+            transition: all 0.4s ease;
+        }
+        .premium-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
+        }
+        .form-card {
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
         }
         .form-input {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: white;
             transition: all 0.3s ease;
         }
         .form-input:focus {
-            transform: scale(1.02);
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+            border-color: #d4af37;
+            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2);
+            background: rgba(255, 255, 255, 0.12);
+        }
+        .input-label {
+            color: #cbd5e1;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="min-h-screen">
 
-    <!-- Navbar -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <i class="fa-solid fa-car text-4xl text-blue-600"></i>
+    <!-- Navbar - Premium look -->
+    <nav class="bg-slate-900/80 backdrop-blur-md border-b border-slate-700/50 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <i class="fa-solid fa-car text-4xl text-amber-400"></i>
                 <div>
-                    <h1 class="text-2xl font-bold tracking-tight">Star Airport Cars</h1>
-                    <p class="text-xs text-gray-500 -mt-1">UK & Europe</p>
+                    <h1 class="text-3xl font-bold text-white tracking-wide">Star Airport Cars</h1>
+                    <p class="text-sm text-amber-200/80">Luxury • UK & Europe</p>
                 </div>
             </div>
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-                <a href="#services" class="hover:text-blue-600 transition">Services</a>
-                <a href="#booking" class="hover:text-blue-600 transition">Book Now</a>
-                <a href="#about" class="hover:text-blue-600 transition">About</a>
+            <div class="hidden md:flex items-center gap-10 text-lg font-medium text-slate-200">
+                <a href="#services" class="hover:text-amber-400 transition">Services</a>
+                <a href="#booking" class="hover:text-amber-400 transition">Book Now</a>
+                <a href="#about" class="hover:text-amber-400 transition">About</a>
             </div>
-            <a href="https://wa.me/447929524798" target="_blank"
-               class="bg-green-500 hover:bg-green-600 text-white px-5 py-2.5 rounded-full flex items-center gap-2 text-sm font-semibold transition">
-                <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+            <a href="https://wa.me/447436954611" target="_blank"
+               class="premium-btn px-7 py-3 rounded-full flex items-center gap-3 text-lg font-semibold shadow-lg">
+                <i class="fa-brands fa-whatsapp text-2xl"></i> WhatsApp Us
             </a>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="hero-bg text-white py-24">
-        <div class="max-w-4xl mx-auto text-center px-6">
-            <h2 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
-                Reliable Airport Transfers<br>& Private Trips Across UK & Europe
+    <!-- Hero - Rich & Luxurious -->
+    <section class="hero-bg text-white py-32 md:py-44 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/30 to-slate-900/70"></div>
+        <div class="max-w-5xl mx-auto text-center px-6 relative z-10">
+            <h2 class="text-5xl md:text-7xl font-bold leading-tight mb-8 tracking-wide drop-shadow-2xl">
+                Premium Airport Transfers<br>& Chauffeur-Driven Journeys
             </h2>
-            <p class="text-xl md:text-2xl mb-8 text-gray-200">
-                From Heathrow to Paris, Manchester to Rome — door-to-door luxury travel with zero hassle.
+            <p class="text-xl md:text-3xl mb-12 text-slate-200 max-w-3xl mx-auto drop-shadow-lg">
+                Discreet, luxurious travel across the UK & Europe. Mercedes, BMW, Rolls-Royce & more.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#booking"
-                   class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-2xl text-lg font-semibold flex items-center justify-center gap-3 transition">
-                    <i class="fa-solid fa-plane"></i> Book Your Ride Now
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="#booking" 
+                   class="premium-btn px-12 py-6 rounded-full text-2xl font-semibold flex items-center justify-center gap-4 shadow-2xl">
+                    <i class="fa-solid fa-plane-departure text-3xl"></i> Reserve Your Journey
                 </a>
-                <a href="https://wa.me/447929524798?text=Hi%2C%20I%20need%20a%20quote%20for%20airport%20transfer"
+                <a href="https://wa.me/447436954611?text=Hi%2C%20I'd%20like%20a%20premium%20transfer%20quote"
                    target="_blank"
-                   class="bg-white text-gray-900 hover:bg-gray-100 px-10 py-4 rounded-2xl text-lg font-semibold flex items-center justify-center gap-3 transition">
-                    <i class="fa-brands fa-whatsapp text-green-500"></i> Chat on WhatsApp
+                   class="bg-white/10 backdrop-blur-md border border-amber-400/50 hover:bg-amber-400/20 text-white px-12 py-6 rounded-full text-2xl font-semibold flex items-center justify-center gap-4 transition">
+                    <i class="fa-brands fa-whatsapp text-3xl text-amber-400"></i> Instant Quote
                 </a>
             </div>
-            <div class="mt-12 flex justify-center gap-8 text-sm">
-                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> 24/7 Service</div>
-                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> All Airports UK & Europe</div>
-                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> English Speaking Drivers</div>
+            <div class="mt-16 flex justify-center gap-12 text-lg opacity-90">
+                <div class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-400 text-xl"></i> 24/7 Concierge</div>
+                <div class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-400 text-xl"></i> Flight Tracking</div>
+                <div class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-400 text-xl"></i> Meet & Greet</div>
             </div>
         </div>
     </section>
 
-    <!-- Services -->
-    <section id="services" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h3 class="text-4xl font-bold mb-3">Our Services</h3>
-                <p class="text-gray-600 max-w-md mx-auto">One-click booking • Instant WhatsApp confirmation • Zero maintenance for you</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-8 rounded-3xl hover:shadow-xl transition">
-                    <i class="fa-solid fa-plane-arrival text-5xl text-blue-600 mb-6"></i>
-                    <h4 class="text-2xl font-semibold mb-3">Airport Pickup & Drop</h4>
-                    <p class="text-gray-600">Heathrow, Gatwick, Manchester, Stansted, Luton, Paris CDG, Amsterdam, Rome, Madrid — all major airports across UK & Europe.</p>
+    <!-- Services - Elevated cards -->
+    <section id="services" class="py-24 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <h3 class="text-5xl font-bold text-center mb-4 text-amber-300">Our Premium Services</h3>
+            <p class="text-xl text-center text-slate-300 mb-16 max-w-3xl mx-auto">Executive transfers, long-distance journeys & bespoke travel experiences.</p>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="form-card p-10 rounded-3xl hover:scale-[1.03] transition duration-500 shadow-2xl">
+                    <i class="fa-solid fa-plane-arrival text-6xl text-amber-400 mb-8"></i>
+                    <h4 class="text-3xl font-bold mb-4 text-white">Airport Transfers</h4>
+                    <p class="text-slate-300 text-lg">Heathrow, Gatwick, Stansted, CDG, Schiphol — meet & greet, luggage assistance, luxury vehicles.</p>
                 </div>
-                <div class="bg-gray-50 p-8 rounded-3xl hover:shadow-xl transition">
-                    <i class="fa-solid fa-road text-5xl text-blue-600 mb-6"></i>
-                    <h4 class="text-2xl font-semibold mb-3">Full Day / Multi-Day Trips</h4>
-                    <p class="text-gray-600">London to Paris • Edinburgh to Glasgow • Any city-to-city journey in UK & Europe. Private driver, luxury vehicles.</p>
+                <div class="form-card p-10 rounded-3xl hover:scale-[1.03] transition duration-500 shadow-2xl">
+                    <i class="fa-solid fa-road text-6xl text-amber-400 mb-8"></i>
+                    <h4 class="text-3xl font-bold mb-4 text-white">Long-Distance Journeys</h4>
+                    <p class="text-slate-300 text-lg">London to Paris, Edinburgh to anywhere — private chauffeur, comfort & privacy guaranteed.</p>
                 </div>
-                <div class="bg-gray-50 p-8 rounded-3xl hover:shadow-xl transition">
-                    <i class="fa-solid fa-users text-5xl text-blue-600 mb-6"></i>
-                    <h4 class="text-2xl font-semibold mb-3">Group & Corporate Travel</h4>
-                    <p class="text-gray-600">1 to 8 passengers • Saloon, MPV, Minibus. Flight tracking, meet & greet, luggage assistance included.</p>
+                <div class="form-card p-10 rounded-3xl hover:scale-[1.03] transition duration-500 shadow-2xl">
+                    <i class="fa-solid fa-users text-6xl text-amber-400 mb-8"></i>
+                    <h4 class="text-3xl font-bold mb-4 text-white">Group & Corporate</h4>
+                    <p class="text-slate-300 text-lg">Up to 8 passengers — MPV, minibus, executive saloons. Corporate accounts welcome.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Booking Form -->
-    <section id="booking" class="py-20 bg-gray-100">
-        <div class="max-w-2xl mx-auto px-6">
-            <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
-                <h3 class="text-3xl font-bold text-center mb-2">Instant Booking via WhatsApp</h3>
-                <p class="text-center text-gray-600 mb-8">Fill the form → Click Book → Details sent instantly to our team on WhatsApp</p>
+    <!-- Booking Form - Rich styling -->
+    <section id="booking" class="py-24 bg-gradient-to-b from-slate-900 to-slate-950">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="form-card rounded-3xl shadow-2xl p-10 md:p-16">
+                <h3 class="text-4xl md:text-5xl font-bold text-center mb-3 text-amber-300">Book Your Premium Transfer</h3>
+                <p class="text-center text-slate-300 text-xl mb-12">Complete details → Instant WhatsApp confirmation</p>
                 
-                <form id="bookingForm" class="space-y-6">
-                    <!-- Personal Info -->
-                    <div class="grid grid-cols-2 gap-6">
+                <form id="bookingForm" class="space-y-8">
+                    <div class="grid md:grid-cols-2 gap-8">
                         <div>
-                            <label class="block text-sm font-medium mb-1">Full Name</label>
-                            <input type="text" id="name" required class="form-input w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none text-lg">
+                            <label class="input-label block text-sm font-medium mb-2">Full Name</label>
+                            <input type="text" id="name" required class="form-input w-full px-6 py-5 rounded-2xl text-lg">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium mb-1">Phone Number</label>
-                            <input type="tel" id="phone" required class="form-input w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none text-lg">
+                            <label class="input-label block text-sm font-medium mb-2">Phone Number</label>
+                            <input type="tel" id="phone" required class="form-input w-full px-6 py-5 rounded-2xl text-lg">
                         </div>
-                    </div>
-                    <!-- Locations -->
-                    <div>
-                        <label class="block text-sm font-medium mb-1">Pickup Location</label>
-                        <input type="text" id="pickup" placeholder="e.g. Heathrow Airport Terminal 5, London" required class="form-input w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none text-lg">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium mb-1">Drop-off Location</label>
-                        <input type="text" id="dropoff" placeholder="e.g. Central Paris or Manchester City Centre" required class="form-input w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none text-lg">
+                        <label class="input-label block text-sm font-medium mb-2">Pickup Location</label>
+                        <input type="text" id="pickup" placeholder="e.g. Heathrow Terminal 5" required class="form-input w-full px-6 py-5 rounded-2xl text-lg">
                     </div>
-                    <!-- Date & Time -->
-                    <div class="grid grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-medium mb-1">Date</label>
-                            <input type="date" id="date" required class="form-input w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none text-lg">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium mb-1">Time</label>
-                            <input type="time" id="time" required class="form-input w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none text-lg">
-                        </div>
-                    </div>
-                    <!-- Passengers -->
                     <div>
-                        <label class="block text-sm font-medium mb-1">Number of Passengers</label>
-                        <select id="passengers" required class="form-input w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none text-lg bg-white">
+                        <label class="input-label block text-sm font-medium mb-2">Drop-off Location</label>
+                        <input type="text" id="dropoff" placeholder="e.g. Central London or Paris" required class="form-input w-full px-6 py-5 rounded-2xl text-lg">
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <label class="input-label block text-sm font-medium mb-2">Date</label>
+                            <input type="date" id="date" required class="form-input w-full px-6 py-5 rounded-2xl text-lg">
+                        </div>
+                        <div>
+                            <label class="input-label block text-sm font-medium mb-2">Time</label>
+                            <input type="time" id="time" required class="form-input w-full px-6 py-5 rounded-2xl text-lg">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="input-label block text-sm font-medium mb-2">Number of Passengers</label>
+                        <select id="passengers" required class="form-input w-full px-6 py-5 rounded-2xl text-lg bg-slate-800">
                             <option value="">Select</option>
                             <option value="1">1 Passenger</option>
                             <option value="2">2 Passengers</option>
@@ -155,22 +186,22 @@
                         </select>
                     </div>
 
-                    <button type="submit"
-                            class="w-full bg-green-500 hover:bg-green-600 text-white py-6 rounded-3xl text-xl font-semibold flex items-center justify-center gap-3 transition shadow-lg">
-                        <i class="fa-brands fa-whatsapp text-3xl"></i>
-                        SEND BOOKING TO WHATSAPP
+                    <button type="submit" class="premium-btn w-full py-7 rounded-3xl text-2xl font-bold flex items-center justify-center gap-4 shadow-xl">
+                        <i class="fa-brands fa-whatsapp text-4xl"></i>
+                        SEND BOOKING REQUEST
                     </button>
                 </form>
-                
-                <p class="text-center text-xs text-gray-500 mt-8">
-                    Your details will be sent directly to our team. We reply within minutes.<br>
-                    Works on Android, iPhone, Chrome, Safari — everywhere.
-                </p>
             </div>
         </div>
     </section>
 
-    <!-- Trust & Footer sections remain unchanged -->
+    <!-- Footer -->
+    <footer class="bg-slate-950 py-16 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 text-center text-slate-400">
+            <p class="text-lg">© 2026 Star Airport Cars. Premium Chauffeur Services Across UK & Europe.</p>
+            <p class="mt-4">Contact us instantly via WhatsApp • Zero maintenance • Global access</p>
+        </div>
+    </footer>
 
     <script>
         function sendToWhatsApp(e) {
@@ -185,52 +216,44 @@
             const passengers = document.getElementById('passengers').value;
 
             if (!name || !phone || !pickup || !dropoff || !date || !time || !passengers) {
-                alert("Please fill all fields");
+                alert("Please complete all fields");
                 return;
             }
 
-            // Updated message format with all details
             const message = 
-`Hi Mano, I want to book cab services
+`Hi Mano, I would like to book a premium transfer
 
-*Customer Name:* ${name}
-*Phone Number:* ${phone}
-*Pickup Location:* ${pickup}
-*Drop-off Location:* ${dropoff}
+*Name:* ${name}
+*Phone:* ${phone}
+*Pickup:* ${pickup}
+*Drop-off:* ${dropoff}
 *Date:* ${date}
 *Time:* ${time}
-*Number of Passengers:* ${passengers}
+*Passengers:* ${passengers}
 
-Please confirm availability, send the price quote and booking confirmation. Thank you! 🚖`;
+Please provide availability and quote. Thank you!`;
 
-            const yourWhatsAppNumber = "447929524798";
+            const yourWhatsAppNumber = "447436954611";
+            const encoded = encodeURIComponent(message);
+            window.open(`https://wa.me/${yourWhatsAppNumber}?text=${encoded}`, '_blank');
 
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappURL = `https://wa.me/${yourWhatsAppNumber}?text=${encodedMessage}`;
-
-            window.open(whatsappURL, '_blank');
-
-            // Success feedback
-            const btn = document.querySelector('button[type="submit"]');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '✅ Sent! Check WhatsApp';
-            btn.style.backgroundColor = '#15803d';
+            const btn = e.target.querySelector('button[type="submit"]');
+            const orig = btn.innerHTML;
+            btn.innerHTML = 'Sent ✓ Check WhatsApp';
+            btn.style.background = 'linear-gradient(135deg, #b8860b, #d4af37)';
             setTimeout(() => {
-                btn.innerHTML = originalText;
-                btn.style.backgroundColor = '';
+                btn.innerHTML = orig;
+                btn.style.background = '';
                 document.getElementById('bookingForm').reset();
-            }, 3000);
+            }, 3500);
         }
 
         document.getElementById('bookingForm').addEventListener('submit', sendToWhatsApp);
 
-        // Default date = tomorrow
-        const today = new Date();
-        today.setDate(today.getDate() + 1);
-        const dateInput = document.getElementById('date');
-        dateInput.value = today.toISOString().split('T')[0];
-        dateInput.min = today.toISOString().split('T')[0];
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        document.getElementById('date').value = tomorrow.toISOString().split('T')[0];
+        document.getElementById('date').min = tomorrow.toISOString().split('T')[0];
     </script>
-
 </body>
 </html>
